@@ -18,7 +18,7 @@ const Navbar = () => {
   // Routes for pages
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
+    { name: "Projects", path: "/projects" },
     { name: "About", path: "/about" },
     { name: "Prices", path: "/prices" },
     { name: "Contact", path: "/contact" },
