@@ -1,5 +1,12 @@
 // components/About.jsx
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+
+
+  <Helmet>
+    <title>About Us - NexaSoft</title>
+    <meta name="description" content="Learn more about NexaSoft, our mission, and the team behind our innovative solutions." />
+  </Helmet>
 
 const About = () => {
   const founder = {

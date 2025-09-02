@@ -1,6 +1,12 @@
 // components/Contact.jsx
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+
+<Helmet>
+  <title>Contact Us - NexaSoft</title>
+  <meta name="description" content="Get in touch with NexaSoft for inquiries, collaborations, or support." />
+</Helmet>
 
 const Contact = () => {
   const [formData, setFormData] = useState({

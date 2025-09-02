@@ -1,5 +1,11 @@
 // components/Projects.jsx
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+
+<Helmet>
+  <title>Our Projects - NexaSoft</title>
+  <meta name="description" content="Explore the projects we've delivered at NexaSoft, showcasing our expertise and innovation." />
+</Helmet>
 
 const Projects = () => {
   // Sample projects (replace with your real ones)

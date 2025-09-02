@@ -1,5 +1,11 @@
 // components/Home.jsx
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+
+<Helmet>
+  <title>Home - NexaSoft</title>
+  <meta name="description" content="Welcome to NexaSoft, your partner in high-performance software solutions." />
+</Helmet>
 
 const Home = () => {
   return (
