@@ -212,7 +212,7 @@ const Contact = () => {
                 <div className="text-cyan-400 text-xl">📧</div>
                 <div>
                   <h3 className="text-white font-semibold">Email</h3>
-                  <p className="text-gray-400"><a href="mailto:rawufdeenriza@gmail.com" className="hover:text-blue-500">rawufdeenriza@gmail.com</a></p>
+                  <p className="text-gray-400"><a href="mailto:nexasoft.it@gmail.com" className="hover:text-blue-500">nexasoft.it@gmail.com</a></p>
                 </div>
               </div>
 

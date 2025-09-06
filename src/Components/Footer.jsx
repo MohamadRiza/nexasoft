@@ -117,7 +117,7 @@ const Footer = () => {
             <li className="flex items-start space-x-3">
               <span className="text-cyan-400 mt-1">📧</span>
               <span className="text-sm text-gray-400">
-                <strong>Email:</strong> <a href="mailto:rawufdeenriza@gmail.com" className="hover:text-blue-500">rawufdeenriza@gmail.com</a>
+                <strong>Email:</strong> <a href="mailto:nexasoft.it@gmail.com" className="hover:text-blue-500">nexasoft.it@gmail.com</a>
               </span>
             </li>
             <li className="flex items-start space-x-3">
