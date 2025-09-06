@@ -6,12 +6,14 @@ import Projects from "./Pages/Projects";
 import About from "./Pages/About";
 import Prices from "./Pages/Prices";
 import Contact from "./Pages/Contact";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar /> 
+        <ScrollToTop />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

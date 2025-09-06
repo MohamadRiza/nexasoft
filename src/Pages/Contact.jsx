@@ -116,6 +116,7 @@ const Contact = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                <h1 className="text-xl font-bold text-white mb-3">❌ Temporary Error Please Contact us through Email or Phone</h1>
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
                   <input
@@ -179,7 +180,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 disabled:opacity-70 rounded-lg font-medium transition flex items-center justify-center"
+                  className="w-full py-3 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 disabled:opacity-70 rounded-lg font-medium transition flex items-center justify-center cursor-not-allowed" //not allowed cursor
                 >
                   {status === "sending" ? (
                     <>
