@@ -24,7 +24,7 @@ const About = () => {
       name: "Rusaid",
       role: "Chief Executive Officer (CEO)",
       titleBadge: "CEO",
-      image: "/images/ceo.jpg", // replace with real photo
+      image: "./Rusaid.jpg", // replace with real photo
       education: "BEng(Hons) in Software Engineering",
       bio: "As CEO, I focus on understanding client needs and ensuring projects stay on track. I manage our team, support requirement gathering, and keep open communication with clients while also contributing to quality assurance.",
       responsibilities: [
