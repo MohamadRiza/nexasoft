@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   const team = [
-    {
+    { 
       name: "R.M. Riza",
       role: "Founder & Lead Software Engineer",
       titleBadge: "Founder",
