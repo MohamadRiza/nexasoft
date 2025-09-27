@@ -35,21 +35,6 @@ const About = () => {
         "Business Strategy",
       ],
     },
-    {
-      name: "Vimukthi",
-      role: "Chief Technology Officer (CTO)",
-      titleBadge: "CTO",
-      image: "/images/cto.jpg", // replace with real photo
-      education: "BEng(Hons) in Software Engineering",
-      bio: "As CTO, I bridge technology and business needs. I handle research, system design, and user experience, while supporting development and technical documentation to ensure solutions meet client expectations.",
-      responsibilities: [
-        "Requirement Gathering",
-        "UI/UX & System Design",
-        "Technical Research",
-        "Development Support",
-        "Testing & Documentation",
-      ],
-    },
   ];
 
   const values = [
