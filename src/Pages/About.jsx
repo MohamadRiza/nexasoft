@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   const team = [
-    { 
+    {
       name: "R.M. Riza",
       role: "Founder & Lead Software Engineer",
       titleBadge: "Founder",
-      image: "./Riza's_Image.jpg", // replace with real photo
+      image: "./Riza's_Image.jpg", // replace with actual photo
       education: "BEng(Hons) in Software Engineering",
-      bio: "As the founder of NexaSoft, I personally handle every stage of software development — from design and coding to testing, deployment, maintenance, and documentation. I believe in delivering solutions that are not only functional but also reliable, scalable, and aligned with our clients' goals.",
+      bio: "As the founder of NexaSoft, I personally handle every stage of software development - from design and coding to testing, deployment, maintenance, and documentation. I believe in delivering solutions that are not only functional but also reliable, scalable, and aligned with our clients' goals.",
       responsibilities: [
         "Full-stack Development",
         "Testing & Quality Assurance",
@@ -24,7 +24,7 @@ const About = () => {
       name: "Rusaid",
       role: "Chief Executive Officer (CEO)",
       titleBadge: "CEO",
-      image: "./Rusaid.jpg", // replace with real photo
+      image: "./Rusaid.jpg", // replace with actual photo
       education: "BEng(Hons) in Software Engineering",
       bio: "As CEO, I focus on understanding client needs and ensuring projects stay on track. I manage our team, support requirement gathering, and keep open communication with clients while also contributing to quality assurance.",
       responsibilities: [
@@ -45,7 +45,7 @@ const About = () => {
     },
     {
       title: "High Performance",
-      description: "We build fast, secure, and scalable systems — no bloat, just clean, maintainable code.",
+      description: "We build fast, secure, and scalable systems - no bloat, just clean, maintainable code.",
       icon: "⚡",
     },
     {
@@ -55,19 +55,78 @@ const About = () => {
     },
     {
       title: "Transparency & Feedback",
-      description: "Weekly updates, shared progress, and open communication — you're always in control.",
+      description: "Weekly updates, shared progress, and open communication - you're always in control.",
       icon: "💬",
     },
   ];
 
+  // Structured data for About page (includes team members as Person)
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About NexaSoft",
+    "description": "Learn about NexaSoft's leadership team, mission, and core values. We are a Sri Lankan software company dedicated to high-performance solutions.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "NexaSoft",
+      "url": "https://nexasoft.site",
+      "logo": "https://nexasoft.site/logo1.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Rawufdeen Mohamad Riza",
+        "jobTitle": "Founder & Lead Software Engineer",
+        "description": "Founder of NexaSoft, handling full-cycle software development.",
+        "sameAs": "https://www.linkedin.com/in/mohamad-riza-rawufdeen-9a6b76254/" // replace if exists
+      },
+      "employee": team.map(member => ({
+        "@type": "Person",
+        "name": member.name,
+        "jobTitle": member.role,
+        "description": member.bio,
+        "image": member.image // use absolute URL in production
+      }))
+    }
+  };
+
   return (
     <section className="min-h-screen bg-gray-950 text-white pt-24 pb-16 px-6 lg:px-12 relative overflow-hidden">
       <Helmet>
-        <title>About Us - NexaSoft</title>
+        {/* Primary Meta Tags */}
+        <title>About Us - NexaSoft | Leadership, Mission & Values</title>
         <meta
           name="description"
-          content="Learn more about NexaSoft, our mission, and the team behind our innovative solutions."
+          content="Meet the team behind NexaSoft: founder R.M. Riza and CEO Rusaid. Learn about our mission to deliver high-performance software solutions in Sri Lanka and worldwide."
         />
+        <meta
+          name="keywords"
+          content="about nexasoft, software company sri lanka, rawufdeen mohamad riza, riza, rusaid, software team, custom software development, software engineers sri lanka"
+        />
+        <link rel="canonical" href="https://nexasoft.site/about" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nexasoft.site/about" />
+        <meta property="og:title" content="About NexaSoft - Our Team & Values" />
+        <meta
+          property="og:description"
+          content="Meet the leadership team at NexaSoft and discover our mission to deliver high-performance, customer-focused software solutions."
+        />
+        <meta property="og:image" content="https://nexasoft.site/og-image.png" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://nexasoft.site/about" />
+        <meta property="twitter:title" content="About NexaSoft - Our Team & Values" />
+        <meta
+          property="twitter:description"
+          content="Meet the leadership team at NexaSoft and discover our mission to deliver high-performance, customer-focused software solutions."
+        />
+        <meta property="twitter:image" content="https://nexasoft.site/about-twitter-image.png" />
+
+        {/* JSON-LD Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       </Helmet>
 
       {/* Background Glow */}
@@ -134,7 +193,7 @@ const About = () => {
           <h2 className="text-3xl font-bold text-center mb-6">Our <span className="text-cyan-400">Mission</span></h2>
           <p className="text-gray-300 text-lg leading-relaxed text-center max-w-4xl mx-auto">
             At NexaSoft, we believe technology should <strong>solve real problems</strong>, not create more complexity. 
-            We exist to build high-performance, maintainable, and user-focused software that helps businesses grow — 
+            We exist to build high-performance, maintainable, and user-focused software that helps businesses grow - 
             without the bloat, delays, or miscommunication.
           </p>
         </div>
@@ -158,19 +217,37 @@ const About = () => {
           </div>
         </div>
 
-        {/* Why Choose Us */}
+        {/* Why Choose Us - Enhanced with icons */}
         <div className="bg-gradient-to-r from-cyan-900/30 to-blue-900/30 backdrop-blur-sm border border-cyan-700/40 rounded-3xl p-10 text-center">
           <h2 className="text-3xl font-bold">Why <span className="text-cyan-400">Clients Choose Us</span></h2>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-300">
-            <div>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-300">
+            {/* Direct Access */}
+            <div className="flex flex-col items-center p-4">
+              <div className="w-16 h-16 bg-cyan-600/20 rounded-full flex items-center justify-center mb-4 border border-cyan-500/30">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
               <div className="text-2xl font-bold text-white">Direct Access</div>
-              <p className="text-sm mt-2">Work directly with our leadership — no middle layers, no delays.</p>
+              <p className="text-sm mt-2">Work directly with our leadership - no middle layers, no delays.</p>
             </div>
-            <div>
+            {/* Fast & Flexible */}
+            <div className="flex flex-col items-center p-4">
+              <div className="w-16 h-16 bg-cyan-600/20 rounded-full flex items-center justify-center mb-4 border border-cyan-500/30">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
               <div className="text-2xl font-bold text-white">Fast & Flexible</div>
               <p className="text-sm mt-2">Agile development, rapid iterations, and full adaptability.</p>
             </div>
-            <div>
+            {/* Zero Hidden Costs */}
+            <div className="flex flex-col items-center p-4">
+              <div className="w-16 h-16 bg-cyan-600/20 rounded-full flex items-center justify-center mb-4 border border-cyan-500/30">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
               <div className="text-2xl font-bold text-white">Zero Hidden Costs</div>
               <p className="text-sm mt-2">Clear pricing, honest communication, real results.</p>
             </div>

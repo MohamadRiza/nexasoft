@@ -2,28 +2,100 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
-<Helmet>
-  <title>Our Projects - NexaSoft</title>
-  <meta name="description" content="Explore the projects we've delivered at NexaSoft, showcasing our expertise and innovation." />
-</Helmet>
-
 const Projects = () => {
-  // Sample projects (replace with your real ones)
+  // Placeholder projects – replace with your real projects later
   const projects = [
     {
       id: 1,
-      title: "Foreign Employment Agency Web APP",
+      title: "Foreign Employement Agency Web APP",
       client: "Diamond Star Manpower Services (DSMS)",
-      description:
-        "A comprehensive web application for managing foreign employment processes, including candidate tracking, document management, and client communication.",
-      image: "/projects/hr-system.jpg",
-      tags: ["Home", "Vacancies", "FAQ", "Contact", "ChatBot AI", "Application", "Vacancies Details", "Admin Panel"],
-      liveUrl: "#", // Replace with live link or demo
+      description: "A comprehensive web application for managing foreign employment processes, including candidate tracking, document management, and client communication. (CUSTOMER NOT RENEWED THE DOMAIN NAME, SO THIS PROJECT IS NOT LIVE ANYMORE)",
+      image: "/placeholder-project.jpg", // Replace with actual image path
+      tags: ["Home", "Vacancies", "FAQ", "Contact Us", "Chatbot GEMINI", "Application Form", "Vacancy Details", "Admin Panel", "and more..."],
+      liveUrl: "#", // Replace with live demo URL
+    },
+    {
+      id: 2,
+      title: "POS System Web Based/Cloud Based",
+      client: "Robinas (Clothing Retailer)",
+      description: "A comprehensive web-based Point of Sale (POS) system for managing sales, inventory, and customer data.",
+      image: "/placeholder-project.jpg",
+      tags: ["POS", "Inventory Management", "Sales Tracking", "Customer Data", "Barcode Scanning", "Reporting", "and more..."],
+      liveUrl: "#",
+    },
+    {
+      id: 3,
+      title: "Watch Retailer and Wholesaler E-Commerce Web APP",
+      client: "Happy Time (PVT) LTD (Watch Retailer and Wholesaler) Sri Lanka And UAE",
+      description: "A comprehensive e-commerce web application for watch retailers and wholesalers, featuring product listings, shopping cart functionality, and secure checkout.",
+      image: "/placeholder-project.jpg",
+      tags: ["Home", "About", "Shop/Product Catelog", "Careers", "Contact", "Customer and Admin Dashboards", "Tawk.to Chat Integration", "Cart and Checkout", "My Orders", "and more...", "UNDER THE DEVELOPMENT"],
+      liveUrl: "https://happy-time-frontend.vercel.app/",
     },
   ];
 
+  // Structured data for Projects page (optional but helpful for SEO)
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "NexaSoft Projects",
+    "description": "Explore the software solutions we've delivered for clients across various industries.",
+    "url": "https://nexasoft.site/projects",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": projects.map((project, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "CreativeWork",
+          "name": project.title,
+          "description": project.description,
+          "url": project.liveUrl !== "#" ? project.liveUrl : undefined,
+        }
+      }))
+    }
+  };
+
   return (
     <section className="min-h-screen bg-gray-950 text-white pt-24 pb-16 px-6 lg:px-12 relative overflow-hidden">
+      <Helmet>
+        <title>Our Projects - NexaSoft | Software Development Portfolio</title>
+        <meta
+          name="description"
+          content="Browse our portfolio of custom software, web, and mobile applications. See how we've helped businesses in Sri Lanka and beyond."
+        />
+        <meta
+          name="keywords"
+          content="software projects sri lanka, web development portfolio, mobile app examples, custom software showcase, nexasoft projects, software solutions"
+        />
+        <link rel="canonical" href="https://nexasoft.site/projects" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nexasoft.site/projects" />
+        <meta property="og:title" content="NexaSoft Projects - Portfolio" />
+        <meta
+          property="og:description"
+          content="Explore our portfolio of custom software, web, and mobile applications."
+        />
+        <meta property="og:image" content="https://nexasoft.site/og-image.png" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://nexasoft.site/projects" />
+        <meta property="twitter:title" content="NexaSoft Projects - Portfolio" />
+        <meta
+          property="twitter:description"
+          content="Explore our portfolio of custom software, web, and mobile applications."
+        />
+        <meta property="twitter:image" content="https://nexasoft.site/og-image.png" />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+
       {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-black"></div>
       <div className="absolute top-20 left-10 w-60 h-60 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -37,7 +109,7 @@ const Projects = () => {
           </h1>
           <p className="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">
             We build real-world solutions for businesses — from startups to enterprises. 
-            Here are some systems we've delivered.
+            Here are some systems we've delivered. <span className="text-cyan-400">(Placeholder data – replace with your actual projects)</span>
           </p>
         </div>
 
