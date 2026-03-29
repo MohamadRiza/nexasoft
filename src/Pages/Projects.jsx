@@ -10,7 +10,7 @@ const Projects = () => {
       title: "Foreign Employement Agency Web APP",
       client: "Diamond Star Manpower Services (DSMS)",
       description: "A comprehensive web application for managing foreign employment processes, including candidate tracking, document management, and client communication. (CUSTOMER NOT RENEWED THE DOMAIN NAME, SO THIS PROJECT IS NOT LIVE ANYMORE)",
-      image: "/placeholder-project.jpg", // Replace with actual image path
+      image: "/DSMSK.png", // Replace with actual image path
       tags: ["Home", "Vacancies", "FAQ", "Contact Us", "Chatbot GEMINI", "Application Form", "Vacancy Details", "Admin Panel", "and more..."],
       liveUrl: "#", // Replace with live demo URL
     },
@@ -19,7 +19,7 @@ const Projects = () => {
       title: "POS System Web Based/Cloud Based",
       client: "Robinas (Clothing Retailer)",
       description: "A comprehensive web-based Point of Sale (POS) system for managing sales, inventory, and customer data.",
-      image: "/placeholder-project.jpg",
+      image: "/SL-POS.png",
       tags: ["POS", "Inventory Management", "Sales Tracking", "Customer Data", "Barcode Scanning", "Reporting", "and more..."],
       liveUrl: "#",
     },
@@ -28,9 +28,9 @@ const Projects = () => {
       title: "Watch Retailer and Wholesaler E-Commerce Web APP",
       client: "Happy Time (PVT) LTD (Watch Retailer and Wholesaler) Sri Lanka And UAE",
       description: "A comprehensive e-commerce web application for watch retailers and wholesalers, featuring product listings, shopping cart functionality, and secure checkout.",
-      image: "/placeholder-project.jpg",
+      image: "/HT-PROJ.png",
       tags: ["Home", "About", "Shop/Product Catelog", "Careers", "Contact", "Customer and Admin Dashboards", "Tawk.to Chat Integration", "Cart and Checkout", "My Orders", "and more...", "UNDER THE DEVELOPMENT"],
-      liveUrl: "https://happy-time-frontend.vercel.app/",
+      liveUrl: "https://happytimeonline.com/",
     },
   ];
 

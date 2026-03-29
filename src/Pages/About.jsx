@@ -35,6 +35,21 @@ const About = () => {
         "Business Strategy",
       ],
     },
+    {
+      name: "Asanthi Lokuge",
+      role: "Project Coordinator and Manual Tester",
+      titleBadge: "Project Coordinator",
+      image: "./Asanthi.jpg", // replace with actual photo
+      education: "BEng(Hons) in Software Engineering",
+      bio: "Project Coordinator and manual tester with exprience supporyinh software developmeng project by coordinating activities, tracking project progress, and ensusuring software quality trough detailed manual testing. skilled in test case creation, bug reporting, requirement validation and maintaining project documentation.",
+      responsibilities: [
+        "Full-Project Coordination",
+        "Manual Testing & Quality Assurance",
+        "UI/UX Feedback",
+        "Tracking progress",
+        "Bug Reporting",
+      ],
+    },
   ];
 
   const values = [
