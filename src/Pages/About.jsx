@@ -41,7 +41,7 @@ const About = () => {
       titleBadge: "Project Coordinator",
       image: "./Asanthi.jpg", // replace with actual photo
       education: "BEng(Hons) in Software Engineering",
-      bio: "Project Coordinator and manual tester with exprience supporyinh software developmeng project by coordinating activities, tracking project progress, and ensusuring software quality trough detailed manual testing. skilled in test case creation, bug reporting, requirement validation and maintaining project documentation.",
+      bio: "Project Coordinator and Manual Tester with experience supporting software development projects by coordinating activities, tracking project progress, and ensuring software quality through detailed manual testing. Skilled in test case creation, bug reporting, requirement validation, and maintaining project documentation.",
       responsibilities: [
         "Full-Project Coordination",
         "Manual Testing & Quality Assurance",
