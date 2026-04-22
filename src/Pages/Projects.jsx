@@ -32,6 +32,19 @@ const Projects = () => {
       tags: ["Home", "About", "Shop/Product Catelog", "Careers", "Contact", "Customer and Admin Dashboards", "Tawk.to Chat Integration", "Cart and Checkout", "My Orders", "and more...", "UNDER THE DEVELOPMENT"],
       liveUrl: "https://happytimeonline.com/",
     },
+    {
+      id: 4,
+      title: "Winsor Watches E-Commerce Web APP (UNDER THE DEVELOPMENT STAGE)",
+      client: "Winsor Watches (UAE Registered Wrist Watch Brand)",
+      description:
+        "A modern e-commerce web application for Winsor Watches, a Sri Lankan-origin watch brand exporting worldwide. The platform showcases premium wrist watches manufactured in the UAE, featuring detailed product catalogs, seamless shopping experience, and secure online purchasing for global customers.",
+      image: "/WINSOR-PROJ.png",
+      tags: [
+        "Home",
+        "DEV.......",
+      ],
+      liveUrl: "https://winsorwatches.com/",
+    },
   ];
 
   // Structured data for Projects page (optional but helpful for SEO)
