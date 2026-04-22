@@ -34,6 +34,19 @@ const Projects = () => {
     },
     {
       id: 4,
+      title: "Samagi Motors (POS System Web Based/Cloud Based) || (UNDER THE DEVELOPMENT STAGE)",
+      client: "Samagi Motors (Sri Lankan Vehicle Parts Retailer and Wholesaler in Hiripitiya, Sri Lanka)",
+      description:
+        "A modern web-based Point of Sale (POS) system for Samagi Motors, a Sri Lankan vehicle parts retailer and wholesaler. The platform includes inventory management, sales tracking, customer data management, barcode scanning, and comprehensive reporting features to streamline operations and enhance customer service.",
+      image: "/SAMAGI_POS.png",
+      tags: [
+        "Home",
+        "DEV.......",
+      ],
+      liveUrl: "https://winsorwatches.com/",
+    },
+    {
+      id: 5,
       title: "Winsor Watches E-Commerce Web APP (UNDER THE DEVELOPMENT STAGE)",
       client: "Winsor Watches (UAE Registered Wrist Watch Brand)",
       description:
