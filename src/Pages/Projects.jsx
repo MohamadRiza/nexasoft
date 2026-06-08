@@ -236,7 +236,7 @@ const Projects = () => {
       client: "Robinas — Clothing Retailer",
       description:
         "A fully web-based Point of Sale system handling sales, inventory, customer records, and reporting for a clothing retailer. Accessible from any device.",
-      image: "/SL-POS.png",
+      image: "/SLPOS.png",
       type: "POS · Web App",
       tags: ["POS System", "Inventory Management", "Sales Tracking", "Customer Records", "Barcode Scanning", "Reports"],
       liveUrl: null,
