@@ -7,41 +7,43 @@ const TeamMemberCard = ({ member }) => {
 
   return (
     <div
-      className={`bg-slate-900/40 backdrop-blur-md p-8 rounded-3xl border transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center relative group ${
+      className={`card-3d-effect bg-slate-900/40 backdrop-blur-md p-8 rounded-3xl border flex flex-col items-center text-center relative group ${
         member.priority 
-          ? "border-cyan-500/50 shadow-[0_0_25px_rgba(6,182,212,0.15)] hover:border-cyan-400 hover:shadow-[0_0_35px_rgba(6,182,212,0.25)]" 
-          : "border-slate-800/80 hover:border-cyan-500/40 hover:shadow-[0_0_25px_rgba(6,182,212,0.1)]"
+          ? "border-cyan-500/50 shadow-[0_0_25px_rgba(6,182,212,0.15)] hover:border-cyan-400" 
+          : "border-slate-800/80 hover:border-cyan-500/40"
       }`}
     >
       {/* Inner glow backdrop */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
 
-      {/* Image Container */}
-      <div className="relative mb-6 z-10">
-        {!imgError ? (
-          <img
-            src={member.image}
-            alt={member.name}
-            onError={() => setImgError(true)}
-            className="w-44 h-44 object-cover rounded-2xl border-4 border-cyan-500/20 shadow-xl group-hover:border-cyan-500/50 transition-all duration-300"
-          />
-        ) : (
-          <div className="w-44 h-44 rounded-2xl border-4 border-cyan-500/20 bg-gradient-to-br from-cyan-950 via-slate-900 to-indigo-950 flex items-center justify-center shadow-xl group-hover:border-cyan-500/50 transition-all duration-300">
-            <svg className="w-20 h-20 text-cyan-500/40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="7" r="4" fill="currentColor" />
-              <path d="M12 14c-4.418 0-8 3.582-8 8h16c0-4.418-3.582-8-8-8z" fill="currentColor" />
-            </svg>
-          </div>
-        )}
+      {/* 3D Floating Image Container */}
+      <div className="card-3d-child-image relative mb-8 z-10">
+        <div className="relative rounded-2xl overflow-visible border-4 border-cyan-500/20 group-hover:border-cyan-500/50 transition-all duration-300 shadow-xl shadow-black/40">
+          {!imgError ? (
+            <img
+              src={member.image}
+              alt={member.name}
+              onError={() => setImgError(true)}
+              className="w-40 sm:w-44 aspect-[3/4] object-cover object-top rounded-xl"
+            />
+          ) : (
+            <div className="w-40 sm:w-44 aspect-[3/4] rounded-xl bg-gradient-to-br from-cyan-950 via-slate-900 to-indigo-950 flex items-center justify-center">
+              <svg className="w-20 h-20 text-cyan-500/40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="7" r="4" fill="currentColor" />
+                <path d="M12 14c-4.418 0-8 3.582-8 8h16c0-4.418-3.582-8-8-8z" fill="currentColor" />
+              </svg>
+            </div>
+          )}
+        </div>
         
         {/* Title Badge overlay */}
-        <div className={`absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r ${member.badgeColor} text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md border border-white/10 select-none`}>
+        <div className={`absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r ${member.badgeColor} text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg border border-white/10 select-none z-20`}>
           {member.titleBadge}
         </div>
       </div>
 
-      {/* Info Section */}
-      <div className="relative z-10 space-y-2 w-full mt-2">
+      {/* 3D Floating Info Section */}
+      <div className="card-3d-child-text relative z-10 space-y-2 w-full mt-2">
         <h3 className="text-xl font-black text-white tracking-wide group-hover:text-cyan-400 transition-colors duration-300">
           {member.name}
         </h3>
