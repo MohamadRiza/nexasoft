@@ -7,6 +7,7 @@ import About from "./Pages/About";
 import Prices from "./Pages/Prices";
 import Contact from "./Pages/Contact";
 import ScrollToTop from "./Components/ScrollToTop";
+import WhatsAppFloating from "./Components/WhatsAppFloating";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <WhatsAppFloating />
       </div>
     </Router>
   );
