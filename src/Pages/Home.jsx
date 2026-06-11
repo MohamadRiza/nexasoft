@@ -3,6 +3,18 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Laptop3D from "../Components/Laptop3D";
 import EarthGlobe3D from "../Components/EarthGlobe3D";
+import {
+  FaGlobe,
+  FaLaptop,
+  FaMobileAlt,
+  FaWrench,
+  FaSync,
+  FaBullseye,
+  FaMapMarkerAlt,
+  FaGlobeAmericas,
+  FaHandshake,
+  FaVideo
+} from "react-icons/fa";
 
 const Home = () => {
   // Structured data for LocalBusiness (JSON-LD)
@@ -36,6 +48,36 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white overflow-hidden">
+      {/* SVG Gradient Definitions */}
+      <svg width="0" height="0" className="absolute">
+        <defs>
+          <linearGradient id="cyan-blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#22d3ee" />
+            <stop offset="100%" stopColor="#3b82f6" />
+          </linearGradient>
+          <linearGradient id="blue-indigo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#3b82f6" />
+            <stop offset="100%" stopColor="#6366f1" />
+          </linearGradient>
+          <linearGradient id="indigo-purple-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#6366f1" />
+            <stop offset="100%" stopColor="#a855f7" />
+          </linearGradient>
+          <linearGradient id="purple-pink-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#a855f7" />
+            <stop offset="100%" stopColor="#ec4899" />
+          </linearGradient>
+          <linearGradient id="pink-rose-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ec4899" />
+            <stop offset="100%" stopColor="#f43f5e" />
+          </linearGradient>
+          <linearGradient id="rose-cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f43f5e" />
+            <stop offset="100%" stopColor="#22d3ee" />
+          </linearGradient>
+        </defs>
+      </svg>
+
       <Helmet>
         {/* Primary Meta Tags */}
         <title>NexaSoft - Custom Software Development in Sri Lanka</title>
@@ -186,42 +228,48 @@ const Home = () => {
             {
               title: "Web Applications",
               desc: "Fast, responsive, and scalable web apps using React, Node.js, and modern frameworks.",
-              icon: "🌐",
+              icon: FaGlobe,
+              grad: "cyan-blue-grad",
               glow: "from-cyan-500/15 to-blue-500/15",
               border: "hover:border-cyan-500/50",
             },
             {
               title: "Desktop Applications",
               desc: "Cross-platform desktop software with Electron, .NET, or native tech - built for performance.",
-              icon: "💻",
+              icon: FaLaptop,
+              grad: "blue-indigo-grad",
               glow: "from-blue-500/15 to-indigo-500/15",
               border: "hover:border-blue-500/50",
             },
             {
               title: "Mobile Apps",
               desc: "iOS & Android apps with React Native or Flutter - smooth, secure, and user-friendly.",
-              icon: "📱",
+              icon: FaMobileAlt,
+              grad: "indigo-purple-grad",
               glow: "from-indigo-500/15 to-purple-500/15",
               border: "hover:border-indigo-500/50",
             },
             {
               title: "IT Support & Maintenance",
               desc: "Ongoing support, updates, and system monitoring to keep your solutions running flawlessly.",
-              icon: "🛠️",
+              icon: FaWrench,
+              grad: "purple-pink-grad",
               glow: "from-purple-500/15 to-pink-500/15",
               border: "hover:border-purple-500/50",
             },
             {
               title: "End-to-End Development",
               desc: "We handle Research, UI/UX Design, Development, Testing, Deployment, and Maintenance.",
-              icon: "🔄",
+              icon: FaSync,
+              grad: "pink-rose-grad",
               glow: "from-pink-500/15 to-rose-500/15",
               border: "hover:border-rose-500/50",
             },
             {
               title: "Customer-Driven Process",
               desc: "Your feedback shapes every step. We’re flexible, transparent, and fully aligned with your goals.",
-              icon: "🎯",
+              icon: FaBullseye,
+              grad: "rose-cyan-grad",
               glow: "from-rose-500/15 to-cyan-500/15",
               border: "hover:border-cyan-500/50",
             },
@@ -234,8 +282,8 @@ const Home = () => {
               <div className={`absolute -right-20 -top-20 w-44 h-44 bg-gradient-to-br ${service.glow} rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700`}></div>
               
               {/* Icon Circle Panel */}
-              <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-3xl mb-6 group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all duration-300 relative z-10">
-                {service.icon}
+              <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center mb-6 group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all duration-300 relative z-10">
+                <service.icon className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" style={{ fill: `url(#${service.grad})` }} />
               </div>
 
               <h3 className="text-2xl font-bold text-white mb-3 relative z-10 group-hover:text-cyan-400 transition-colors duration-300">
@@ -271,16 +319,16 @@ const Home = () => {
             </p>
             <div className="flex flex-wrap gap-3 pt-6">
               {[
-                { label: "Sri Lanka", icon: "🇱🇰" },
-                { label: "International", icon: "🌐" },
-                { label: "Physical Meetings", icon: "🤝" },
-                { label: "Online Meetings", icon: "💻" },
+                { label: "Sri Lanka", icon: FaMapMarkerAlt },
+                { label: "International", icon: FaGlobeAmericas },
+                { label: "Physical Meetings", icon: FaHandshake },
+                { label: "Online Meetings", icon: FaVideo },
               ].map((tag) => (
                 <span
                   key={tag.label}
-                  className="bg-slate-900/80 text-cyan-300 px-5 py-2.5 rounded-full text-sm font-semibold border border-cyan-500/30 hover:border-cyan-400 hover:bg-slate-800/90 transition-all duration-300 flex items-center space-x-2 shadow-sm"
+                  className="bg-slate-900/80 text-cyan-300 px-5 py-2.5 rounded-full text-sm font-semibold border border-cyan-500/30 hover:border-cyan-400 hover:bg-slate-800/90 transition-all duration-300 flex items-center space-x-2 shadow-sm group"
                 >
-                  <span>{tag.icon}</span>
+                  <tag.icon className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" style={{ fill: "url(#cyan-blue-grad)" }} />
                   <span>{tag.label}</span>
                 </span>
               ))}

@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import {
+  FaBullseye,
+  FaBolt,
+  FaSync,
+  FaComments,
+  FaRocket
+} from "react-icons/fa";
 
 const TeamMemberCard = ({ member }) => {
   const [imgError, setImgError] = useState(false);
@@ -141,25 +148,29 @@ const About = () => {
     {
       title: "Customer First",
       description: "Your vision drives every line of code. We listen deeply, adapt quickly, and deliver with your goals in mind.",
-      icon: "🎯",
+      icon: FaBullseye,
+      grad: "cyan-blue-grad",
       glow: "from-cyan-500/10 to-blue-500/10",
     },
     {
       title: "High Performance",
       description: "We build fast, secure, and scalable systems - no bloat, just clean, maintainable code.",
-      icon: "⚡",
+      icon: FaBolt,
+      grad: "amber-orange-grad",
       glow: "from-amber-500/10 to-orange-500/10",
     },
     {
       title: "End-to-End Ownership",
       description: "From research to deployment and ongoing maintenance, we stay with you through every phase.",
-      icon: "🔄",
+      icon: FaSync,
+      grad: "indigo-purple-grad",
       glow: "from-indigo-500/10 to-purple-500/10",
     },
     {
       title: "Transparency & Feedback",
       description: "Weekly updates, shared progress, and open communication - you're always in control.",
-      icon: "💬",
+      icon: FaComments,
+      grad: "fuchsia-pink-grad",
       glow: "from-fuchsia-500/10 to-pink-500/10",
     },
   ];
@@ -194,6 +205,28 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white overflow-hidden relative">
+      {/* SVG Gradient Definitions */}
+      <svg width="0" height="0" className="absolute">
+        <defs>
+          <linearGradient id="cyan-blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#22d3ee" />
+            <stop offset="100%" stopColor="#3b82f6" />
+          </linearGradient>
+          <linearGradient id="amber-orange-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#fbbf24" />
+            <stop offset="100%" stopColor="#f97316" />
+          </linearGradient>
+          <linearGradient id="indigo-purple-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#6366f1" />
+            <stop offset="100%" stopColor="#a855f7" />
+          </linearGradient>
+          <linearGradient id="fuchsia-pink-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#e879f9" />
+            <stop offset="100%" stopColor="#ec4899" />
+          </linearGradient>
+        </defs>
+      </svg>
+
       <Helmet>
         {/* Primary Meta Tags */}
         <title>About Us - NexaSoft | Leadership, Mission & Values</title>
@@ -284,8 +317,8 @@ const About = () => {
         <div className="relative group overflow-hidden bg-slate-900/30 backdrop-blur-md border border-slate-800/80 rounded-3xl p-10 lg:p-12 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] hover:border-cyan-500/30 transition-all duration-300">
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
-            <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-3xl flex-shrink-0 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
-              🚀
+            <div className="w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(6,182,212,0.15)] group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all duration-300">
+              <FaRocket className="w-7 h-7 transition-transform duration-300 group-hover:scale-110" style={{ fill: "url(#cyan-blue-grad)" }} />
             </div>
             <div className="space-y-4 text-center md:text-left">
               <h2 className="text-2xl font-bold text-white">
@@ -319,8 +352,8 @@ const About = () => {
                 <div className={`absolute -right-16 -top-16 w-36 h-36 bg-gradient-to-br ${value.glow} rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700`}></div>
                 
                 <div className="relative z-10 flex gap-6">
-                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-2xl flex-shrink-0 group-hover:border-cyan-400 group-hover:shadow-[0_0_12px_rgba(6,182,212,0.3)] transition-all duration-300">
-                    {value.icon}
+                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0 group-hover:border-cyan-400 group-hover:shadow-[0_0_12px_rgba(6,182,212,0.3)] transition-all duration-300">
+                    <value.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" style={{ fill: `url(#${value.grad})` }} />
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
