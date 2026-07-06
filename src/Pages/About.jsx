@@ -14,11 +14,10 @@ const TeamMemberCard = ({ member }) => {
 
   return (
     <div
-      className={`card-3d-effect bg-slate-900/40 backdrop-blur-md p-8 rounded-3xl border flex flex-col items-center text-center relative group ${
-        member.priority 
-          ? "border-cyan-500/50 shadow-[0_0_25px_rgba(6,182,212,0.15)] hover:border-cyan-400" 
-          : "border-slate-800/80 hover:border-cyan-500/40"
-      }`}
+      className={`card-3d-effect bg-slate-900/40 backdrop-blur-md p-8 rounded-3xl border flex flex-col items-center text-center relative group ${member.priority
+        ? "border-cyan-500/50 shadow-[0_0_25px_rgba(6,182,212,0.15)] hover:border-cyan-400"
+        : "border-slate-800/80 hover:border-cyan-500/40"
+        }`}
     >
       {/* Inner glow backdrop */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
@@ -42,7 +41,7 @@ const TeamMemberCard = ({ member }) => {
             </div>
           )}
         </div>
-        
+
         {/* Title Badge overlay */}
         <div className={`absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gradient-to-r ${member.badgeColor} text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg border border-white/10 select-none z-20`}>
           {member.titleBadge}
@@ -60,10 +59,10 @@ const TeamMemberCard = ({ member }) => {
         <p className="text-[11px] text-gray-500 font-medium tracking-wide">
           {member.education}
         </p>
-        
+
         {/* Divider line */}
         <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-500/15 to-transparent my-4"></div>
-        
+
         <p className="text-gray-400 text-xs leading-relaxed text-justify px-1">
           {member.bio}
         </p>
@@ -93,11 +92,11 @@ const About = () => {
   const team = [
     {
       name: "R.M. Riza",
-      role: "Director & Lead Software Engineer",
-      titleBadge: "Director",
-      image: "/LMU_ME_HD.jpg",
+      role: "Founder & Lead Software Engineer",
+      titleBadge: "Founder",
+      image: "/riza_generated.jpg",
       education: "BEng(Hons) in Software Engineering",
-      bio: "As the director of NexaSoft, I personally handle every stage of software development - from design and coding to testing, deployment, maintenance, and documentation. I believe in delivering solutions that are not only functional but also reliable, scalable, and aligned with our clients' goals.",
+      bio: "As the founder of NexaSoft, I personally handle every stage of software development - from design and coding to testing, deployment, maintenance, and documentation. I believe in delivering solutions that are not only functional but also reliable, scalable, and aligned with our clients' goals.",
       responsibilities: [
         "Full-stack Development",
         "Testing & Quality Assurance",
@@ -112,7 +111,7 @@ const About = () => {
       name: "Rusaid",
       role: "Senior Digital Marketing Executive",
       titleBadge: "Marketing",
-      image: "/Rusaid.jpg",
+      image: "/Rusaid.png",
       education: "Digital Marketing Specialist",
       bio: "As our Senior Digital Marketing Executive, I specialize in SEO, search engine marketing, brand positioning, and social media campaigns. I work closely with clients to increase search engine rankings, drive organic traffic, and establish a dominant online brand presence.",
       responsibilities: [
@@ -141,6 +140,23 @@ const About = () => {
       ],
       priority: false,
       badgeColor: "from-cyan-500 to-teal-600",
+    },
+    {
+      name: "M.I.M. Anas",
+      role: "Digital Marketing Executive & UI Designer",
+      titleBadge: "Marketing & UI",
+      image: "/anas_generated.jpg",
+      education: "Digital Marketing Specialist",
+      bio: "As our Digital Marketing Executive and UI Designer, I specialize in SEO audits, social media operations, content creation, UI layouts, and search engine campaigns. I work collaboratively to boost online brand visibility, design engaging user interfaces, and optimize digital customer acquisition channels.",
+      responsibilities: [
+        "SEO Strategy & Optimization",
+        "UI/UX & Wireframing",
+        "Social Media Management",
+        "Content Marketing & Copywriting",
+        "Analytics & Campaign Audits",
+      ],
+      priority: false,
+      badgeColor: "from-sky-500 to-blue-600",
     },
   ];
 
@@ -306,7 +322,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
             {team.map((member, idx) => (
               <TeamMemberCard key={idx} member={member} />
             ))}
@@ -350,7 +366,7 @@ const About = () => {
               >
                 {/* Accent glow on card hover */}
                 <div className={`absolute -right-16 -top-16 w-36 h-36 bg-gradient-to-br ${value.glow} rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700`}></div>
-                
+
                 <div className="relative z-10 flex gap-6">
                   <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center flex-shrink-0 group-hover:border-cyan-400 group-hover:shadow-[0_0_12px_rgba(6,182,212,0.3)] transition-all duration-300">
                     <value.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" style={{ fill: `url(#${value.grad})` }} />
@@ -372,11 +388,11 @@ const About = () => {
         {/* Why Clients Choose Us */}
         <div className="bg-gradient-to-br from-cyan-900/20 via-slate-900/45 to-indigo-900/20 backdrop-blur-md border border-cyan-500/20 rounded-3xl p-10 lg:p-12 text-center shadow-2xl relative overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          
+
           <h2 className="text-3xl font-bold text-white relative z-10">
             Why <span className="text-cyan-400">Clients Choose Us</span>
           </h2>
-          
+
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10 text-gray-300">
             {/* Direct Access */}
             <div className="flex flex-col items-center p-6 bg-slate-950/30 rounded-2xl border border-slate-800/60 hover:border-cyan-500/30 transition-colors duration-300">
@@ -415,7 +431,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          
+
           <div className="mt-12 relative z-10">
             <Link
               to="/contact"
